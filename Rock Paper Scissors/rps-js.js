@@ -86,11 +86,13 @@ function handleImageClick(image,index) {
     const userValue = ["R", "P", "S"];
    
 
-    let outComeValuses = determineOutcome(userValue[index],cpuValue[randomNumber])
+    let outComeValuses = determineOutcome(userValue[index],cpuValue[randomNumber]);
     result.textContent =
       outComeValuses === "Draw" ? "Match Draw" : `${outComeValuses} Won!!!`;
       optionImages.forEach((img) => img.classList.remove("active"));
       ctext.forEach((text) => text.classList.remove("active"));
+
+      
 
     if(outComeValuses === "CPU"){
       compScoreValue+=1;
@@ -100,19 +102,18 @@ function handleImageClick(image,index) {
       userScoreValue+=1;
       playerScore.textContent=userScoreValue;
     }
-    gameStart++;
+    gameStart=1;
     updateScores();
-    
+    // if(result.textContent !== "Let's Play!!!"){
+    //   result.textContent = "Let's Play!!!";
+      
+    // }
   }, 1200);
 }
 
 optionImages.forEach((image, index) => {
   image.addEventListener("click", () => {
-    
     handleImageClick(image,index);
-    result.textContent = "Let's Play!!!";
-
-    userRes.src = cpuRes.src = "/images/rock.png";
   })
 });
 
@@ -124,4 +125,8 @@ reset.addEventListener("click",()=>{
 })
 loadScores();
 
+if(gameStart === 0){
+  // reset.removeChild(reset.children[0]);
+  // reset.classList.remove("reset-opt");
+}
 
