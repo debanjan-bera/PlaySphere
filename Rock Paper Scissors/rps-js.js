@@ -48,8 +48,7 @@ function resetScroe(){
     playerScore.textContent=userScoreValue;
     compScore.textContent= compScoreValue;
   }
-
-  };
+};
 function determineOutcome(userChoice, cpuChoice) {
   const outcomes = {
     RR: "Draw",
