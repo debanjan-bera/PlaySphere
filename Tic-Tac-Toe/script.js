@@ -1,13 +1,22 @@
+
 const btnRef = document.querySelectorAll(".game-opt-btn"),
   resetBtn = document.querySelector(".reset-bnt"),
   newGameBtn = document.querySelector(".new-game"),
   popUpMass = document.querySelector(".start-popup"),
   msRef = document.querySelector(".message"),
-  turnSlider = document.querySelector(".slider-X");
-let isTurn = "X";
-let xTurn = true;
+  turnSlider = document.querySelector(".slider-X"),
+  isX = document.querySelector(".user-point"),
+  isO = document.querySelector(".cpu-point"),
+  changeSlider = document.querySelector(".turn-opt");
 
-let winningPattern = [
+let storeArr = Array(9).fill(""); // Initialize to empty strings
+let xTurn = true;
+let drawMatch = 0;
+let xScoreCount = 0;
+let oScoreCount = 0;
+let win = false;
+
+const winningPatterns = [
   [0, 1, 2],
   [0, 4, 8],
   [0, 3, 6],
@@ -17,40 +26,80 @@ let winningPattern = [
   [3, 4, 5],
   [6, 7, 8],
 ];
+
 function changeTurn(ele) {
-  if (xTurn === true) {
-    ele.innerText = "X";
-    xTurn = false
-    turnSlider.classList.toggle("slider-X")
-  } else {
-    ele.innerText = "O";
-    xTurn = true;
-    turnSlider.classList.toggle("slider-X")
+  ele.innerText = xTurn ? "X" : "O";
+  xTurn = !xTurn;
+  turnSlider.classList.toggle("slider-X");
+}
+
+function winChecker() {
+  for (let pattern of winningPatterns) {
+    const [a, b, c] = pattern.map(index => btnRef[index].innerText);
+    if (a && a === b && a === c) {
+      highlightWinningCombination(pattern);
+      updateScore(a);
+      return true; // A win has occurred
+    }
+  }
+  return false; // No win found
+}
+
+function highlightWinningCombination(pattern) {
+  pattern.forEach(index => {
+    btnRef[index].style.backgroundColor = "red";
+  });
+  msRef.innerText = `Winner is ${btnRef[pattern[0]].innerText}`;
+  changeSlider.innerHTML = `<div class="winning-part">Winner is ${btnRef[pattern[0]].innerText}</div>`;
+  changeSlider.style.backgroundColor = " rgb(114, 255, 114)"
+  popUpMass.classList.toggle("hide");
+}
+
+function updateScore(winner) {
+  if (winner === "X") {
+    isX.innerText = xScoreCount++;
+  } else if (winner === "O") {
+    isO.innerText = oScoreCount ++;
   }
 }
 
-let win = false;
-function winChecker(ele){
-    for(let i of winningPattern){
-    let [ele1, ele2, ele3] = [btnRef[i[0]].innerText,btnRef[i[1]].innerText,btnRef[i[2]].innerText]
-    
-    if(ele1 != "" & ele2 != "" & ele3 !=""){
-        if(ele1 == ele2 && ele2 == ele3){
-            // console.log(ele.innerText);
-            console.log("Winner is",ele.innerText);
-            win = true
-        }
-    }
-    }
-};
-btnRef.forEach((ele) => {
+btnRef.forEach((ele, index) => {
   ele.addEventListener("click", () => {
-    if (ele.innerText === "") {
-        if(win !== true){
-            let turn = changeTurn(ele);
+    if (ele.innerText === "" && !win) {
+      changeTurn(ele);
+      storeArr[index] = ele.innerText;
+      win = winChecker();
+
+      if (!win) {
+        drawMatch++;
+        if (drawMatch >= 9) {
+          msRef.innerText = "Draw";
+          popUpMass.classList.remove("hide");
+          changeSlider.innerHTML = `<div class="winning-part">Draw</div>`;
         }
-      winChecker(ele)
-      console.log(win);
+      }
+      console.log(storeArr);
     }
   });
 });
+
+newGameBtn.addEventListener("click", () => {
+  btnRef.forEach(ele => {
+    ele.innerText = "";
+    ele.style.backgroundColor = ""; 
+  });
+  ContinueGame();
+});
+
+function ContinueGame() {
+  popUpMass.classList.toggle("hide");
+  win = false;
+  xTurn = true;
+  drawMatch = 0;
+  storeArr.fill(""); 
+  changeSlider.innerHTML = `<div class="text">X</div>
+            <div class="text">O</div>
+            <div class="slider slider-X slider-O"></div>`
+            changeSlider.style.backgroundColor = " rgba(255, 255, 255, 0.318)"
+  turnSlider.classList.add("slider-X");
+}
