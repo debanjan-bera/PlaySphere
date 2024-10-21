@@ -8,8 +8,8 @@ const btnRef = document.querySelectorAll(".game-opt-btn"),
   isO = document.querySelector(".cpu-point"),
   changeSlider = document.querySelector(".turn-opt");
 
-// let storeArr = Array(9).fill("9"); // Initialize to empty strings
-let storeArr = ['X','O','','','','','','X','O']
+let storeArr = Array(9).fill(""); // Initialize to empty strings
+// let storeArr = ['X','O','','','','','','X','O']
 let xTurn = true;
 let drawMatch = 0;
 let xScoreCount = 0;
@@ -71,7 +71,7 @@ btnRef.forEach((ele, index) => {
   ele.addEventListener("click", () => {
     if (ele.innerText === "" && !win) {
       changeTurn(ele);
-      // storeArr[index] = ele.innerText;
+      storeArr[index] = ele.innerText;
       win = winChecker();
 
       if (!win) {
@@ -100,7 +100,7 @@ function ContinueGame() {
   win = false;
   xTurn = true;
   drawMatch = 0;
-  // storeArr.fill("");
+  storeArr.fill("");
   changeSlider.innerHTML = `<div class="text">X</div>
             <div class="text">O</div>
             <div class="slider slider-X slider-O"></div>`;
@@ -109,7 +109,8 @@ function ContinueGame() {
 }
 
 
-btnRef.forEach((e,index)=>{
-  e.innerText = storeArr[index]
-  console.log(index);
-})
+// btnRef.forEach((e,index)=>{
+//   // storeArr.fill("");
+//   e.innerText = storeArr[index]
+//   console.log(index);
+// })

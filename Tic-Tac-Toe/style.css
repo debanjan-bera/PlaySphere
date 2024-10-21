@@ -59,7 +59,7 @@ nav{
 }
 .cont{
     display: flex;
-    height: 90vh;
+    height: 100%;
     width: 100vw;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -80,7 +80,7 @@ nav{
     border-radius: 1em;
     border: 0.2rem dashed rgb(77, 3, 127);
     /* justify-content: space-evenly; */
-    margin: 10px 0px ;
+    margin: 8px 0px ;
 }
 p{
     font-size: 2rem;
@@ -163,6 +163,13 @@ p{
     width: 100%;
     text-align: center;
 }
+.align{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
 .gamebox{
     width: 50vmin;
     height:50vmin;
@@ -190,11 +197,11 @@ p{
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 .reset-bnt{
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0%; */
     display: inline-block;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding: 10px 50px;
     font-size: 2.3rem;
     font-weight: 600;
