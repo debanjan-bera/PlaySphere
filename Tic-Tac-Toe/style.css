@@ -29,7 +29,7 @@ nav{
 .start-popup{
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.377);
+    background-color: rgba(255, 255, 255, 0.133);
     position: absolute;
     top: 0;
     display: flex;
@@ -182,7 +182,7 @@ p{
     height: 16vmin;
     align-content: center;
     text-align: center;
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 500;
     border: none;
     border-radius: 8px;
@@ -201,4 +201,59 @@ p{
     border-radius: 10px;
     color: #090909;
     background-color: rgb(0, 255, 225);
+}
+@media screen and (max-width: 580px){
+    .point-box{
+        width: 70vmin;
+        height: 30vmin;
+        border-radius: 0.8em;
+    }
+    .player{
+        font-size: 4vw;
+    }
+    .turn-opt{
+        width: 69vmin;
+    }
+    .gamebox {
+        width: 68vmin;
+        height: 60vmin;
+    }
+    .game-opt-btn {
+        width: 20vmin;
+        height: 20vmin;
+        font-size: 4rem;
+    }
+
+}
+
+@media screen and (max-width: 440px){
+    .point-box{
+        width: 83vmin;
+        height: 36vmin;
+                
+    }
+    .gamebox {
+        width: 77vmin;
+        height: 76vmin;
+    }
+    .game-opt-btn {
+        width: 24vmin;
+        height: 23vmin;
+    }
+    .turn-opt{
+        width: 77vmin;
+    }
+}
+@media screen and (max-width: 360px) {
+    .game-opt-btn {
+        width: 25vmin;
+        height: 25vmin;
+    }
+    .gamebox {
+        width: 81vmin;
+        height: 81vmin;
+    }
+    .turn-opt {
+        width: 82vmin;
+    }
 }
