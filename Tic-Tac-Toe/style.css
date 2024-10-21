@@ -102,6 +102,26 @@ p{
     justify-content: center;
     
 }
+.side{
+    width: 10px;
+    height: 100%;
+    /* position: relative; */
+}
+.vs{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3vh;
+}
+.round{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-35px, -7px);
+    font-size: 1.4vw;
+    width: 8vw;
+}
 .player{
     width: 100%;
     padding-bottom: 5px;

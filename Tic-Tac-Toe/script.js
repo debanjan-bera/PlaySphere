@@ -8,13 +8,13 @@ const btnRef = document.querySelectorAll(".game-opt-btn"),
   isO = document.querySelector(".cpu-point"),
   changeSlider = document.querySelector(".turn-opt");
 
-let storeArr = Array(9).fill(""); // Initialize to empty strings
-// let storeArr = ['X','O','','','','','','X','O']
-let xTurn = true;
-let drawMatch = 0;
-let xScoreCount = 0;
-let oScoreCount = 0;
-let win = false;
+let storeArr = Array(9).fill("");
+let xTurn = true,
+  drawMatch = 0,
+  xScoreCount = 0,
+  oScoreCount = 0,
+  win = false;
+  // count = 0;
 
 const winningPatterns = [
   [0, 1, 2],
@@ -59,11 +59,9 @@ function highlightWinningCombination(pattern) {
 
 function updateScore(winner) {
   if (winner === "X") {
-    xScoreCount++;
-    isX.innerText = xScoreCount;
+    isX.innerText = ++xScoreCount;
   } else if (winner === "O") {
-    oScoreCount++
-    isO.innerText = oScoreCount;
+    isO.innerText = ++oScoreCount;
   }
 }
 
@@ -108,9 +106,19 @@ function ContinueGame() {
   turnSlider.classList.add("slider-X");
 }
 
-
 // btnRef.forEach((e,index)=>{
 //   // storeArr.fill("");
 //   e.innerText = storeArr[index]
 //   console.log(index);
 // })
+resetBtn.addEventListener("click", () => {
+  btnRef.forEach((ele) => {
+    ele.innerText = "";
+  });
+  win = false;
+  xTurn = true;
+  drawMatch = 0;
+  storeArr.fill("");
+  turnSlider.classList.add("slider-X");
+  // xScoreCount = oScoreCount = isO.innerText = isX.innerText = 0;
+});
