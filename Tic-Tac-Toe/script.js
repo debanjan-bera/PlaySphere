@@ -120,5 +120,5 @@ resetBtn.addEventListener("click", () => {
   drawMatch = 0;
   storeArr.fill("");
   turnSlider.classList.add("slider-X");
-  // xScoreCount = oScoreCount = isO.innerText = isX.innerText = 0;
+  xScoreCount = oScoreCount = isO.innerText = isX.innerText = 0;
 });
