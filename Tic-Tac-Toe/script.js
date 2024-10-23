@@ -13,6 +13,7 @@ let xTurn = true,
   drawMatch = 0,
   xScoreCount = 0,
   oScoreCount = 0,
+  roundCount = 0;
   win = false;
   // count = 0;
 
@@ -28,6 +29,7 @@ const winningPatterns = [
 ];
 
 function changeTurn(ele) {
+  ele.innerText = xTurn ?  ele.style.color = "#0068a5": ele.style.color = "rgb(255 153 0)";
   ele.innerText = xTurn ? "X" : "O";
   xTurn = !xTurn;
   turnSlider.classList.toggle("slider-X");
@@ -42,22 +44,27 @@ function winChecker() {
       return true; // A win has occurred
     }
   }
+  
   return false; // No win found
 }
 
 function highlightWinningCombination(pattern) {
   pattern.forEach((index) => {
-    btnRef[index].style.backgroundColor = "red";
+    btnRef[index].style.backgroundColor = "#ff4b4b";
   });
   msRef.innerText = `Winner is ${btnRef[pattern[0]].innerText}`;
   changeSlider.innerHTML = `<div class="winning-part">Winner is ${
     btnRef[pattern[0]].innerText
   }</div>`;
+
   changeSlider.style.backgroundColor = " rgb(114, 255, 114)";
   popUpMass.classList.toggle("hide");
 }
 
 function updateScore(winner) {
+  roundCount++;
+  
+  document.querySelector(".round-mes-scroe").innerText=roundCount;
   if (winner === "X") {
     isX.innerText = ++xScoreCount;
   } else if (winner === "O") {
@@ -69,9 +76,9 @@ btnRef.forEach((ele, index) => {
   ele.addEventListener("click", () => {
     if (ele.innerText === "" && !win) {
       changeTurn(ele);
+      console.log(ele.innerText);
       storeArr[index] = ele.innerText;
       win = winChecker();
-
       if (!win) {
         drawMatch++;
         if (drawMatch >= 9) {
@@ -80,7 +87,6 @@ btnRef.forEach((ele, index) => {
           changeSlider.innerHTML = `<div class="winning-part">Draw</div>`;
         }
       }
-      console.log(storeArr);
     }
   });
 });
@@ -90,6 +96,7 @@ newGameBtn.addEventListener("click", () => {
     ele.innerText = "";
     ele.style.backgroundColor = "";
   });
+  
   ContinueGame();
 });
 
@@ -104,6 +111,8 @@ function ContinueGame() {
             <div class="slider slider-X slider-O"></div>`;
   changeSlider.style.backgroundColor = " rgba(255, 255, 255, 0.318)";
   turnSlider.classList.add("slider-X");
+  document.querySelector(".round-scroe").innerText=roundCount;
+
 }
 
 // btnRef.forEach((e,index)=>{
