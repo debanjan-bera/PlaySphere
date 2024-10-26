@@ -37,6 +37,7 @@ btnRef.forEach((ele, index) => {
       win = winChecker();
       sliderGretting(win,ele);
     }
+   
   });
 });
 
@@ -61,7 +62,7 @@ function winChecker() {
       return true; // A win has occurred
     }
   }
-
+  
   return false; // No win found
 }
 
@@ -75,7 +76,7 @@ function highlightWinningCombination(pattern) {
 
 
 function popUpMess() {
-  if ((roundCount = 2)) {
+  if ((roundCount === 2)) {
     msRef.innerText = `Winner is ${btnRef[pattern[0]].innerText}`;
     popUpMass.classList.toggle("hide");
   }
@@ -85,12 +86,13 @@ function popUpMess() {
 
 function updateScore(winner) {
   roundCount++;
-  document.querySelector(".round-mes-scroe").innerText = roundCount;
   if (winner === "X") {
     isX.innerText = ++xScoreCount;
   } else if (winner === "O") {
     isO.innerText = ++oScoreCount;
   }
+  document.querySelector(".round-mes-scroe").innerText = roundCount;
+
 }
 
 
@@ -103,6 +105,9 @@ function sliderGretting(win,ele){
   }else{
     drawMatch++;
     if (drawMatch >= 9) {
+      roundCount++
+      document.querySelector(".round-mes-scroe").innerText = roundCount;
+      console.log(roundCount);
       msRef.innerText = "Draw";
       popUpMass.classList.remove("hide");
       changeSlider.innerHTML = `<div class="winning-part">Draw</div>`;
@@ -114,6 +119,8 @@ function sliderGretting(win,ele){
 
 
 function ContinueGame(ele) {
+  
+  
   ele.addEventListener("click", () => {
     btnRef.forEach((e) => {
       e.innerText = "";
@@ -130,6 +137,8 @@ function ContinueGame(ele) {
     changeSlider.style.backgroundColor = " rgba(255, 255, 255, 0.318)";
     turnSlider.classList.add("slider-X");
     document.querySelector(".round-scroe").innerText = roundCount;
+    
+    
   });
 }
 function resetBtnFun(ele) {

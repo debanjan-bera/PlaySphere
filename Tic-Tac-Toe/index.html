@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <!-- <nav>
         <div>
@@ -15,40 +17,110 @@
         <div></div>
         <div></div>
     </nav> -->
+    <div class="sidebar">
+        <section>
+            <div class="logo-head">
+                <img src="/images/tic-tac-toe.png" alt="Logo">
+                <div class="text-head header-text">
+                    FUN-GAME-ZONE
+                    <br>Web-Game
+                </div>
+            </div>
+            <section class="menu-bar">
+                <div class="menu">
+                    <div class="serach-box">
+                        <i class='bx bx-search'></i>
+                        <input type="search" placeholder="Search....">
+                    </div>
+                    <ul class="menu-link">
+                        <li class="nav-link">
+                            <div class="list-text dashboard">
+                                <a href="#">
+                                    <i class='bx bx-home-alt'></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-link">
+                            <div class="list-text dashboard">
+                                <a href="#">
+                                    <i class='bx bx-home-alt'></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-link">
+                            <div class="list-text dashboard">
+                                <a href="#">
+                                    <i class='bx bx-home-alt'></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-link">
+                            <div class="list-text dashboard">
+                                <a href="#">
+                                    <i class='bx bx-home-alt'></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-link">
+                            <div class="list-text dashboard">
+                                <a href="#">
+                                    <i class='bx bx-home-alt'></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
+        </section>
+
+        <section>
+            <p>Dark Mode</p>
+            <p>log Out</p>
+            <p>Profile</p>
+        </section>
+    </div>
     <div class="choice">
         <p>Select The options!!!</p>
         <div class="user-choice">
             <div class="team-choice team-X">X</div>
             <div class="team-choice team-O">O</div>
         </div>
-        
+
     </div>
     <div class="start-popup hide">
         <div class="message">Sample Message</div>
-        <div class="round-massege">Round <span class="round-mes-scroe">0</span></div>
-        <button class="new-game">Continue Game</button>       
+        <div class="round-massege">Round <span class="round-mes-scroe">1</span></div>
+        <button class="new-game">Continue Game</button>
     </div>
 
     <div class="cont">
-                <div class="point-box">
-                    <div class="user-box">
-                        <div class="user-pic">
-                            <img src="/images/person_24dp_0000F5_FILL0_wght400_GRAD0_opsz24.png" alt="User-X">
-                            <div class="player">Team-X </div>
-                        </div>
-                        <div class="user-point">0</div>
-                    </div>
-                    <div class="side"><div class="vs">v/s</div><div class="round">Round <span class="round-scroe">1</span></div></div>
-                    <div class="cpu-box">
-                        
-                        <div class="cpu-point">0</div>
-                        <div class="cpu-pic">
-                            <img src="/images/person_24dp_0000F5_FILL0_wght400_GRAD0_opsz24.png" alt="User-Y">
-                            <div class="player">Team-O</div>
-                        </div>
-                    </div>
+        <div class="point-box">
+            <div class="user-box">
+                <div class="user-pic">
+                    <img src="/images/person_24dp_0000F5_FILL0_wght400_GRAD0_opsz24.png" alt="User-X">
+                    <div class="player">Team-X </div>
                 </div>
+                <div class="user-point">0</div>
+            </div>
+            <div class="side">
+                <div class="vs">v/s</div>
+                <div class="round">Round <span class="round-scroe">1</span></div>
+            </div>
+            <div class="cpu-box">
+
+                <div class="cpu-point">0</div>
+                <div class="cpu-pic">
+                    <img src="/images/person_24dp_0000F5_FILL0_wght400_GRAD0_opsz24.png" alt="User-Y">
+                    <div class="player">Team-O</div>
+                </div>
+            </div>
+        </div>
 
         <div class="turn-opt">
             <div class="text">X</div>
@@ -57,7 +129,7 @@
             <div class="gritting-slider hide-grit win-grit draw-grit">
                 <h2>Winner is <span>X</span></h2>
             </div>
-            
+
         </div>
         <div class="align">
             <!-- <div class="text-1">0</div> -->
@@ -80,4 +152,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
