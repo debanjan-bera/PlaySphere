@@ -4,8 +4,8 @@ const btnRef = document.querySelectorAll(".game-opt-btn"),
   popUpMass = document.querySelector(".start-popup"),
   msRef = document.querySelector(".message"),
   turnSlider = document.querySelector(".slider-X"),
-  isX = document.querySelector(".user-point"),
-  isO = document.querySelector(".cpu-point"),
+  isXScore = document.querySelector(".user-point"),
+  isOScore = document.querySelector(".cpu-point"),
   changeSlider = document.querySelector(".turn-opt");
 
 let storeArr = Array(9).fill("");
@@ -28,31 +28,32 @@ const winningPatterns = [
   [6, 7, 8],
 ];
 
-// function loadScores() {
-//   const storedUserScore = localStorage.getItem('userScore');
-//   const storedCompScore = localStorage.getItem('compScore');
-//   const storesdGameIsStart = localStorage.getItem('start')
+function loadScores() {
+  const storedXScore = localStorage.getItem('XScore');
+  const storedOScore = localStorage.getItem('OScore');
+  const storesdRoundIsStart = localStorage.getItem('round-level')
   
-//   if (storedUserScore) {
-//     userScoreValue = parseInt(storedUserScore);
-//     playerScore.textContent = userScoreValue;
-//   }
+  if (storedXScore) {
+    xScoreCount = parseInt(storedXScore);
+    isXScore.textContent = xScoreCount;
+  }
   
-//   if (storedCompScore) {
-//     compScoreValue = parseInt(storedCompScore);
-//     compScore.textContent = compScoreValue;
-//   }
-//   if(gameStart){
-//     gameStart = parseInt(storesdGameIsStart)
-//   }
-// }
+  if (storedOScore) {
+    oScoreCount = parseInt(storedOScore);
+    isOScore.textContent = oScoreCount;
+  }
+  if(storesdRoundIsStart){
+    roundCount = parseInt(storesdRoundIsStart);
+    document.querySelector(".round-mes-scroe").innerText = roundCount
+  }
+}
 
-// // Update scores in local storage
-// function updateScores() {
-//   localStorage.setItem('userScore', userScoreValue);
-//   localStorage.setItem('compScore', compScoreValue);
-//   localStorage.setItem('start', gameStart)
-// }
+// Update scores in local storage
+function updateScoresOnStorage() {
+  localStorage.setItem('XScore', xScoreCount);
+  localStorage.setItem('OScore', oScoreCount);
+  localStorage.setItem('round-level',roundCount)
+}
 
 // function resetScroe(){
 //   if(localStorage.getItem('start') !== '0'){
@@ -73,7 +74,6 @@ btnRef.forEach((ele, index) => {
       win = winChecker();
       sliderGretting(win,ele);
     }
-   
   });
 });
 
@@ -96,6 +96,7 @@ function winChecker() {
       highlightWinningCombination(pattern);
       updateScore(a);
       return true; // A win has occurred
+      updateScoresOnStorage();
     }
   }
   
@@ -123,12 +124,12 @@ function popUpMess() {
 function updateScore(winner) {
   roundCount++;
   if (winner === "X") {
-    isX.innerText = ++xScoreCount;
+    isXScore.innerText = ++xScoreCount;
   } else if (winner === "O") {
-    isO.innerText = ++oScoreCount;
+    isOScore.innerText = ++oScoreCount;
   }
   document.querySelector(".round-mes-scroe").innerText = roundCount;
-
+ 
 }
 
 
@@ -147,6 +148,7 @@ function sliderGretting(win,ele){
       msRef.innerText = "Draw";
       popUpMass.classList.remove("hide");
       changeSlider.innerHTML = `<div class="winning-part">Draw</div>`;
+      updateScoresOnStorage();
     }
   }
 }//under construction
@@ -170,8 +172,8 @@ function ContinueGame(ele) {
               <div class="slider slider-X slider-O"></div>`;
     changeSlider.style.backgroundColor = " rgba(255, 255, 255, 0.318)";
     turnSlider.classList.add("slider-X");
-    document.querySelector(".round-scroe").innerText = roundCount;
-    
+    document.querySelector(".round-score").innerText = roundCount;
+    updateScoresOnStorage();
     
   });
 }
@@ -185,6 +187,9 @@ function resetBtnFun(ele) {
     drawMatch = 0;
     storeArr.fill("");
     turnSlider.classList.add("slider-X");
-    xScoreCount = oScoreCount = isO.innerText = isX.innerText = 0;
+    xScoreCount = oScoreCount = isOScore.innerText = isXScore.innerText = 0;
+    roundCount = 0;
+    document.querySelector(".round-score").innerText = roundCount;
   });
 }
+loadScores()
