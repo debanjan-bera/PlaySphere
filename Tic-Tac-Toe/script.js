@@ -28,6 +28,42 @@ const winningPatterns = [
   [6, 7, 8],
 ];
 
+// function loadScores() {
+//   const storedUserScore = localStorage.getItem('userScore');
+//   const storedCompScore = localStorage.getItem('compScore');
+//   const storesdGameIsStart = localStorage.getItem('start')
+  
+//   if (storedUserScore) {
+//     userScoreValue = parseInt(storedUserScore);
+//     playerScore.textContent = userScoreValue;
+//   }
+  
+//   if (storedCompScore) {
+//     compScoreValue = parseInt(storedCompScore);
+//     compScore.textContent = compScoreValue;
+//   }
+//   if(gameStart){
+//     gameStart = parseInt(storesdGameIsStart)
+//   }
+// }
+
+// // Update scores in local storage
+// function updateScores() {
+//   localStorage.setItem('userScore', userScoreValue);
+//   localStorage.setItem('compScore', compScoreValue);
+//   localStorage.setItem('start', gameStart)
+// }
+
+// function resetScroe(){
+//   if(localStorage.getItem('start') !== '0'){
+//     localStorage.clear();
+//     userRes.src = cpuRes.src = "/images/rock.png";
+//     compScoreValue = userScoreValue = 0;
+//     result.textContent = "Let's Play!!!";
+//     playerScore.textContent=userScoreValue;
+//     compScore.textContent= compScoreValue;
+//   }
+// };
 btnRef.forEach((ele, index) => {
   ele.addEventListener("click", () => {
     if (ele.innerText === "" && !win) {
@@ -119,8 +155,6 @@ function sliderGretting(win,ele){
 
 
 function ContinueGame(ele) {
-  
-  
   ele.addEventListener("click", () => {
     btnRef.forEach((e) => {
       e.innerText = "";
