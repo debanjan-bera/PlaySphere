@@ -96,7 +96,6 @@ function winChecker() {
       highlightWinningCombination(pattern);
       updateScore(a);
       return true; // A win has occurred
-      updateScoresOnStorage();
     }
   }
   
@@ -129,6 +128,7 @@ function updateScore(winner) {
     isOScore.innerText = ++oScoreCount;
   }
   document.querySelector(".round-mes-scroe").innerText = roundCount;
+  // updateScoresOnStorage();
  
 }
 
@@ -148,7 +148,7 @@ function sliderGretting(win,ele){
       msRef.innerText = "Draw";
       popUpMass.classList.remove("hide");
       changeSlider.innerHTML = `<div class="winning-part">Draw</div>`;
-      updateScoresOnStorage();
+      // updateScoresOnStorage();
     }
   }
 }//under construction
@@ -173,7 +173,7 @@ function ContinueGame(ele) {
     changeSlider.style.backgroundColor = " rgba(255, 255, 255, 0.318)";
     turnSlider.classList.add("slider-X");
     document.querySelector(".round-score").innerText = roundCount;
-    updateScoresOnStorage();
+    // updateScoresOnStorage();
     
   });
 }
@@ -192,4 +192,4 @@ function resetBtnFun(ele) {
     document.querySelector(".round-score").innerText = roundCount;
   });
 }
-loadScores()
+// loadScores()
