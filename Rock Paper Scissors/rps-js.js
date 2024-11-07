@@ -103,10 +103,7 @@ function handleImageClick(image,index) {
     }
     gameStart=1;
     updateScores();
-    // if(result.textContent !== "Let's Play!!!"){
-    //   result.textContent = "Let's Play!!!";
-      
-    // }
+
   }, 1200);
 }
 

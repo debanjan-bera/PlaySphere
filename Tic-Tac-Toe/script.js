@@ -9,11 +9,8 @@ const btnRef = document.querySelectorAll(".game-opt-btn"),
   changeSlider = document.querySelector(".turn-opt");
 
 let storeArr = Array(9).fill("");
-let xTurn = true,
-  drawMatch = 0,
-  xScoreCount = 0,
-  oScoreCount = 0,
-  roundCount = 1;
+let xTurn = true,drawMatch = xScoreCount = oScoreCount = 0,
+roundCount = 1;
 win = false;
 // count = 0;
 
