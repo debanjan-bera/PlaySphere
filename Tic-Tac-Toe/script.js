@@ -24,6 +24,9 @@ const winningPatterns = [
   [3, 4, 5],
   [6, 7, 8],
 ];
+const isFun = ()=>{
+console.log(hello);
+}
 
 function loadScores() {
   const storedXScore = localStorage.getItem('XScore');
@@ -172,7 +175,7 @@ function ContinueGame(ele) {
     document.querySelector(".round-score").innerText = roundCount;
     // updateScoresOnStorage();
     
-  });
+  }); 
 }
 function resetBtnFun(ele) {
   ele.addEventListener("click", () => {

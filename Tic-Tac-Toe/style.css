@@ -9,7 +9,7 @@
 body {
   height: 100vh;
   width: 100vw;
-  --s: 200px;
+  /* --s: 200px;
   --_g: #00000085 25%, #010101 0 50%, #0c0c0c0b 0;
   --_l1: #ffffff00 0 1px, #0f0d0d00 0 calc(25% - 1px), #ffffff00 0 25%;
   --_l2: #ffffff00 0 1px, #0000 0 calc(50% - 1px), #ffffff00 0 50%;
@@ -22,8 +22,8 @@ body {
     conic-gradient(from 45deg at 75% 75%, var(--_g)),
     conic-gradient(from -45deg at 75% 25%, var(--_g)),
     repeating-conic-gradient(#1c1c1c 0 45deg, #060606f3 0 90deg);
-  background-size: var(--s) var(--s);
-  /* background: linear-gradient(135deg, #8052ec, #d161ff); */
+  background-size: var(--s) var(--s); */
+  background: linear-gradient(135deg, #8052ec, #d161ff);
 }
 /* nav{
     height: 8vh;
