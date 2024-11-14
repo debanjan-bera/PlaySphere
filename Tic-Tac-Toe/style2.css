@@ -9,8 +9,8 @@
   body {
     height: 100vh;
     width: 100vw;
-    /* background: linear-gradient(135deg, #8052ec, #d161ff); */
-    background-image: url('https://t3.ftcdn.net/jpg/04/74/35/38/240_F_474353826_UZqTSzBryp6JumCEwofWwXtVBlqc8YXM.jpg');
+    background: linear-gradient(135deg, #8052ec, #d161ff);
+    /* background-image: url('https://t3.ftcdn.net/jpg/04/74/35/38/240_F_474353826_UZqTSzBryp6JumCEwofWwXtVBlqc8YXM.jpg'); */
   }
   .sidebar {
     position: fixed;
@@ -237,8 +237,8 @@
 .game-box-btn{
   width: 100%;
   height: 100%;
-  border: 2px solid black;
-  background-color: rgb(255, 250, 114);
+  border: 1px solid rgba(195, 195, 195, 0.889);
+  background-color: rgba(0, 0, 0, 0.41);
   border-radius: 5px;
   font-size: 5rem;
   text-align: center;
