@@ -1,10 +1,12 @@
 const btnGameBox = document.querySelectorAll(".game-box-btn"),
   resetBtn = document.querySelector(".reset-bnt"),
-  isXScore = document.querySelector(".user-point"),
-  isYScore = document.querySelector(".cpu-point"),
+  isXScore = document.querySelector(".scoreX"),
+  isYScore = document.querySelector(".scoreO"),
   palyerScoreBox = document.querySelectorAll(".playerBox"),
   conituneMatch = document.querySelector(".continueBtn"),
   popUpMassage = document.querySelector(".popUpMss"),
+  winnerMassage = document.querySelector(".isWinMas"),
+  // isXScore = document.querySelector(".scoreX"),
   winningPatterns = [
     [0, 1, 2],
     [0, 4, 8],
@@ -17,7 +19,9 @@ const btnGameBox = document.querySelectorAll(".game-box-btn"),
   ];
 let tempArr = Array(9).fill("");
 let win = (xTurn = false);
-let count = 0;
+let count = xScoreCount = oScoreCount= 0;
+
+
 const playGame = () => {
   btnGameBox.forEach((ele, index) => {
     ele.addEventListener("click", () => {
@@ -27,25 +31,28 @@ const playGame = () => {
       }
     });
   });
+  conituneMatch.addEventListener("click", (ele) => {
+    conituneMatchFun();
+  });
 };
 
 const changeOptTurn = (ele) => {
   ele.innerText = xTurn ? "O" : "X";
   ele.style.color = xTurn ? "#ffab2d" : "#0fa6ff";
   xTurn = !xTurn;
-  console.log(ele.innerText);
-  count++;
 };
 
 const winChecker = () => {
   for (let pattern of winningPatterns) {
     const [a, b, c] = pattern.map((index) => btnGameBox[index].innerText);
     if (a && a === b && a === c) {
+      isWinner(a,true)
       console.log(a);
       popUpMassage.classList.toggle("hide");
       return true;
     }
     else if(count === 9){
+      isWinner('draw',false)
       console.log('draw');
       popUpMassage.classList.toggle("hide");
       return true;
@@ -70,7 +77,16 @@ const resetGame = () => {
 };
 
 playGame();
-conituneMatch.addEventListener("click", (ele) => {
-  conituneMatchFun();
-});
+
 resetGame();
+
+const isWinner = (winner,winCheck)=>{
+  winnerMassage.innerHTML = winCheck ?`<h3>${winner} is winner</h3>`:`<h3>Match is ${winner}</h3>`;
+  if(winner === 'X'){
+    xScoreCount++
+  }else if(winner === 'Y'){
+    oScoreCount++
+  }
+  
+
+}
