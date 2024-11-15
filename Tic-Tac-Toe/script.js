@@ -18,9 +18,8 @@ const btnGameBox = document.querySelectorAll(".game-box-btn"),
     [6, 7, 8],
   ];
 let tempArr = Array(9).fill("");
-let win = (xTurn = false);
-let count = xScoreCount = oScoreCount= 0;
-
+let win = xTurn = false;
+let count = xScoreCount = oScoreCount = roundCount = 0;
 
 const playGame = () => {
   btnGameBox.forEach((ele, index) => {
@@ -28,8 +27,7 @@ const playGame = () => {
       if (!win && ele.innerText === "") {
         changeOptTurn(ele);
         win = winChecker();
-      }
-    });
+      }});
   });
   conituneMatch.addEventListener("click", (ele) => {
     conituneMatchFun();
@@ -40,24 +38,23 @@ const changeOptTurn = (ele) => {
   ele.innerText = xTurn ? "O" : "X";
   ele.style.color = xTurn ? "#ffab2d" : "#0fa6ff";
   xTurn = !xTurn;
+  count++;
 };
 
 const winChecker = () => {
   for (let pattern of winningPatterns) {
     const [a, b, c] = pattern.map((index) => btnGameBox[index].innerText);
     if (a && a === b && a === c) {
-      isWinner(a,true)
-      console.log(a);
+      isWinner(a, true);
       popUpMassage.classList.toggle("hide");
       return true;
-    }
-    else if(count === 9){
-      isWinner('draw',false)
-      console.log('draw');
-      popUpMassage.classList.toggle("hide");
-      return true;
-    }
-  }
+    } else {
+      if (count === 9) {
+        isWinner("draw", false);
+        console.log("draw");
+        popUpMassage.classList.toggle("hide");
+        return true;
+      }}}
   return false;
 };
 
@@ -66,8 +63,8 @@ const conituneMatchFun = () => {
   btnGameBox.forEach((ele) => {
     ele.innerText = "";
   });
-  win = false
-  count = 0
+  win = false;
+  count = 0;
 };
 
 const resetGame = () => {
@@ -80,13 +77,15 @@ playGame();
 
 resetGame();
 
-const isWinner = (winner,winCheck)=>{
-  winnerMassage.innerHTML = winCheck ?`<h3>${winner} is winner</h3>`:`<h3>Match is ${winner}</h3>`;
-  if(winner === 'X'){
-    xScoreCount++
-  }else if(winner === 'Y'){
-    oScoreCount++
-  }
-  
+const isWinner = (winner, winCheck) => {
+  winnerMassage.innerHTML = winCheck
+    ? `<h3>${winner} is winner</h3>`
+    : `<h3>Match is ${winner}</h3>`;
 
-}
+  if (winCheck) {
+    isXScore.innerHTML = winner === "X" ? ++xScoreCount : ++oScoreCount;
+    isYScore.innerHTML = oScoreCount;
+  }
+  roundCount++;
+  console.log(`x is ${xScoreCount} and O is ${oScoreCount}`);
+};
