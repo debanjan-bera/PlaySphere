@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -77,7 +78,19 @@
                 <li class="nav-link mode">
                     <div class="mode list-text">
                         <div class="mode-area">
-                            <div class="sun-moon"><i class='bx bx-sun'></i></div>
+                            <label>
+                              <input class="toggle-checkbox" type="checkbox">
+                              <div class="toggle-slot">
+                                <div class="sun-icon-wrapper">
+                                  <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                                </div>
+                                <div class="toggle-button"></div>
+                                <div class="moon-icon-wrapper">
+                                  <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                                </div>
+                              </div>
+                            </label>
+                            
                             <p>Light Mode</p>
                             <div class="toggle">
                                 <div class="switch"></div>
@@ -99,8 +112,12 @@
         </section>
     </div>
     <div class="popUpMss displayFlex hide">
-        <p class="isWinMas"></p>
-        <button class="continueBtn">Continue</button>
+        <p class="isWinMas">Continue Match</p>
+<button class="btn-23 continueBtn">
+  <span class="text">Continue</span>
+  <span aria-hidden="" class="marquee">Continue</span>
+</button>
+
     </div>
     <div class="contOfGame gridLayout">
         <div class="scroeBox gridLayout">
@@ -112,7 +129,7 @@
             </div>
             <div class="middelBox displayFlex">
                 <div class="vs">V/S</div>
-                <div class="round">Round 1</div>
+                <div class="round">Round <span class="roundValue">1</span></div>
             </div>
             <div class="isYBox activeMode displayFlex">
                 <div class="scoreO">

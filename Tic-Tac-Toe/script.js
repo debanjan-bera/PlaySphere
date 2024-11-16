@@ -6,7 +6,7 @@ const btnGameBox = document.querySelectorAll(".game-box-btn"),
   conituneMatch = document.querySelector(".continueBtn"),
   popUpMassage = document.querySelector(".popUpMss"),
   winnerMassage = document.querySelector(".isWinMas"),
-  // isXScore = document.querySelector(".scoreX"),
+  roundScore = document.querySelector(".roundValue"),
   winningPatterns = [
     [0, 1, 2],
     [0, 4, 8],
@@ -19,7 +19,8 @@ const btnGameBox = document.querySelectorAll(".game-box-btn"),
   ];
 let tempArr = Array(9).fill("");
 let win = xTurn = false;
-let count = xScoreCount = oScoreCount = roundCount = 0;
+let count = xScoreCount = oScoreCount = 0;
+let roundCount = 1
 
 const playGame = () => {
   btnGameBox.forEach((ele, index) => {
@@ -32,6 +33,9 @@ const playGame = () => {
   conituneMatch.addEventListener("click", (ele) => {
     conituneMatchFun();
   });
+  resetBtn.addEventListener("click", (ele) => {
+    resetGame();
+  });
 };
 
 const changeOptTurn = (ele) => {
@@ -42,19 +46,21 @@ const changeOptTurn = (ele) => {
 };
 
 const winChecker = () => {
-  for (let pattern of winningPatterns) {
-    const [a, b, c] = pattern.map((index) => btnGameBox[index].innerText);
-    if (a && a === b && a === c) {
-      isWinner(a, true);
-      popUpMassage.classList.toggle("hide");
-      return true;
-    } else {
-      if (count === 9) {
-        isWinner("draw", false);
-        console.log("draw");
+  if(count > 4){
+    for (let pattern of winningPatterns) {
+      const [a, b, c] = pattern.map((index) => btnGameBox[index].innerText);
+      if (a && a === b && a === c) {
+        isWinner(a, true);
         popUpMassage.classList.toggle("hide");
         return true;
-      }}}
+      } else {
+        if (count === 9) {
+          isWinner("draw", false);
+          console.log("draw");
+          popUpMassage.classList.toggle("hide");
+          return true;
+        }}}
+  }
   return false;
 };
 
@@ -68,14 +74,13 @@ const conituneMatchFun = () => {
 };
 
 const resetGame = () => {
-  resetBtn.addEventListener("click", (ele) => {
-    console.log("hello");
+  console.log('Match reset');
+  btnGameBox.forEach((ele) => {
+    ele.innerText = "";
   });
+  win = false;
+  count = 0;
 };
-
-playGame();
-
-resetGame();
 
 const isWinner = (winner, winCheck) => {
   winnerMassage.innerHTML = winCheck
@@ -86,6 +91,9 @@ const isWinner = (winner, winCheck) => {
     isXScore.innerHTML = winner === "X" ? ++xScoreCount : ++oScoreCount;
     isYScore.innerHTML = oScoreCount;
   }
-  roundCount++;
-  console.log(`x is ${xScoreCount} and O is ${oScoreCount}`);
+  roundScore.textContent = ++roundCount;
+
+  console.log(`x is ${xScoreCount} and O is ${oScoreCount} ${roundCount}`);
 };
+
+playGame();

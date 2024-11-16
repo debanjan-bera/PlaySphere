@@ -41,61 +41,49 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-.logo-head .text-head{
+.logo-head .text-head {
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.4rem;
   color: rgb(178, 178, 178);
 }
-.serach-box{
-    height: 50px;
-    width: 100%;
-    margin-top: 15px;
-    list-style: none;
-    background-color: rgba(255, 255, 255, 0.047);
-    display: flex;
-    align-items: center;
-    border: none;
-    border-radius: 7px;
+.serach-box {
+  height: 50px;
+  width: 100%;
+  margin-top: 15px;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.047);
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 7px;
 }
-.serach-box i{
-    padding:0 13px;
-    font-size: 1.75rem;
-    color: rgb(77, 95, 255);
+.serach-box i {
+  padding: 0 13px;
+  font-size: 1.75rem;
+  color: rgb(77, 95, 255);
 }
-.sidebar .serach-box input{
-    height: 100%;
-    width: 100%;
-    font-size: 1.1rem;
-    outline: none;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.174);
+.sidebar .serach-box input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.174);
 }
-.menu-link li{
-    height: 50px;
-    width: 100%;
-    margin-top: 1.1rem;
-    list-style: none;
-    display: flex;
-    align-items: center;
+.menu-link li {
+  height: 50px;
+  width: 100%;
+  margin-top: 1.1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
 }
-.list-text{
-    height: 100%;
-    width: 100%;
+.list-text {
+  height: 100%;
+  width: 100%;
 }
-.list-text a{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* background-color: rgba(77, 95, 255, 0.104); */
-    color: rgb(178, 178, 178);
-    text-decoration: none;
-    border: none;
-    border-radius: 7px;
-}
-.mode-area{
+.list-text a {
   height: 100%;
   width: 100%;
   display: flex;
@@ -107,51 +95,63 @@ body {
   border: none;
   border-radius: 7px;
 }
-.list-text a:hover{
+.mode-area {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: rgba(77, 95, 255, 0.104); */
+  color: rgb(178, 178, 178);
+  text-decoration: none;
+  border: none;
+  border-radius: 7px;
+}
+.list-text a:hover {
   background-color: rgba(79, 95, 239, 0.233);
 }
-a:active{
+a:active {
   background-color: rgba(79, 95, 239, 0.233);
 }
-.mode-area:hover{
+.mode-area:hover {
   background-color: rgba(79, 95, 239, 0.233);
 }
-.mode-area:active{
+.mode-area:active {
   background-color: rgba(79, 95, 239, 0.233);
 }
-.list-text a i{
-    padding:0 10px;
-    font-size: 1.75rem;
-}
-.list-text .mode-area i{
-  padding:0 10px;
+.list-text a i {
+  padding: 0 10px;
   font-size: 1.75rem;
 }
-.sidebar .list-text a p{
-    font-size: 1.2rem;
+.list-text .mode-area i {
+  padding: 0 10px;
+  font-size: 1.75rem;
 }
-.list-text .mode-area p{
+.sidebar .list-text a p {
   font-size: 1.2rem;
 }
-.sidebar .last-menu-bar{
-     width: 100%; 
+.list-text .mode-area p {
+  font-size: 1.2rem;
 }
-.sidebar .mode .toggle{
+.sidebar .last-menu-bar {
+  width: 100%;
+}
+.sidebar .mode .toggle {
   height: 100%;
   min-width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.sidebar .toggle .switch{
+.sidebar .toggle .switch {
   position: relative;
   height: 24px;
   width: 44px;
   border-radius: 25px;
   background-color: white;
 }
-.sidebar .switch::before{
-  content: '';
+.sidebar .switch::before {
+  content: "";
   position: absolute;
   top: 50%;
   left: 5px;
@@ -161,146 +161,326 @@ a:active{
   border-radius: 100%;
   background-color: rgb(209, 233, 255);
 }
-.mini-sidebar{
+.mini-sidebar {
   width: 60px;
   /* background-color: rgba(0, 0, 0, 0.823); */
 }
-.mini-sidebar .logo-head .text-head{
+.mini-sidebar .logo-head .text-head {
   display: none;
 }
-.mini-sidebar .serach-box input{
-  display: none;
-
-}
-.mini-sidebar .list-text a p{
+.mini-sidebar .serach-box input {
   display: none;
 }
-.mini-sidebar .mode .toggle{
-  display: none;
-
-}
-.mini-sidebar .last-menu-bar{
-  width: 0%; 
-}
-
-
-
-.displayFlex{
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-
-.popUpMss{
-height: 100vh;
-width: 100vw;
-background-color: rgba(231, 231, 231, 0.619);
-position: absolute;
-top: 0;
-font-size: 3rem;
-z-index: 99;
-flex-direction: column;
-flex-wrap: nowrap;
-}
-
-.hide{
+.mini-sidebar .list-text a p {
   display: none;
 }
 
-
-.gridLayout{
-display: grid;
-align-items: center;
-justify-items: center;
+.mini-sidebar .mode .toggle {
+  display: none;
 }
-.contOfGame{
-width: 100vw;
-height: 100vh;
-display: grid;
-/* background-color: rgb(235, 255, 119); */
-grid-template-columns: 1fr;
-grid-template-rows: 1fr 2fr 0.5fr;
+.mini-sidebar .last-menu-bar {
+  width: 0%;
 }
-.scroeBox{
-background-color: rgba(0, 0, 0, 0.085);
-width: 30rem;
-height: 60%;
-display: grid;
-grid-template-columns: 1fr 0.5fr 1fr;
-border-radius: 0.6rem;
-gap: 1rem;
-}
-.isXBox,.isYBox{
-width: 100%;
-height: 100%;
-background-color: white;
-border-radius: 0.6rem;
-flex-direction: column;
-font-size: 2rem;
-}
-.middelBox{
-flex-direction: column;
-font-size: 1.3rem;
-}
-.gameBoxCont{
-width: 100%;
-height: 100%;
-/* background-color: #8052ec; */
-}
-.gameWrap{
-width: 28rem;
-height: 90%;
-grid-template-columns: 1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr;
-/* background-color: #8052ec; */
-gap: 0.6rem;
-}
-.game-box-btn{
-width: 100%;
-height: 100%;
-border: 1px solid rgba(195, 195, 195, 0.889);
-background-color: rgba(0, 0, 0, 0.41);
-border-radius: 5px;
-font-size: 5rem;
-text-align: center;
-font-weight: 700;
+/* From Uiverse.io by JkHuger */
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
+.toggle-slot {
+  font-size: 10px;
+  position: relative;
+  height: 3.5em;
+  width: 7em;
+  border: 0px solid transparent;
+  border-radius: 10em;
+  background-color: white;
+  transition: background-color 250ms;
+}
 
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: #374151;
+}
 
+.toggle-button {
+  transform: translate(0.3em, 0.25em);
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  background-color: #ffeccf;
+  box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+  transition: background-color 250ms, border-color 250ms,
+    transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+}
 
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #485367;
+  box-shadow: inset 0px 0px 0px 0.75em white;
+  transform: translate(3.65em, 0.25em);
+}
 
-.btnOfReset{
-width: 100%;
-height: 100%;
-flex-direction: column;
+.sun-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: #ffbb52;
+}
+
+.sun-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(3em, 2em) rotate(0deg);
+}
+
+.moon-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: white;
+}
+
+.moon-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 0;
+  transform: translate(11em, 2em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(0.26, 2.5, 0.46, 0.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(-15deg);
+}
+
+.displayFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popUpMss {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(245, 245, 245, 0.866);
+  position: absolute;
+  top: 0;
+  font-size: 3rem;
+  z-index: 99;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.btn-23,
+.btn-23 *,
+.btn-23 :after,
+.btn-23 :before,
+.btn-23:after,
+.btn-23:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-23 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 50%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 1rem;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.btn-23:disabled {
+  cursor: default;
+}
+
+.btn-23:-moz-focusring {
+  outline: auto;
+}
+
+.btn-23 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-23 [hidden] {
+  display: none;
+}
+
+.btn-23 {
+  border-radius: 30px;
+  border-width: 3px;
+  overflow: hidden;
+  padding: 0.4rem 2rem;
+  position: relative;
+}
+
+.btn-23 span {
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: absolute;
+  transition: opacity 0.2s ease;
+}
+
+.btn-23 .marquee {
+  --spacing: 6em;
+  --start: 0em;
+  --end: 6em;
+  -webkit-animation: marquee 1s linear infinite;
+  animation: marquee 1s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  opacity: 0;
+  position: relative;
+  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
+    #fff calc(var(--spacing) * -2) 0;
+}
+
+.btn-23:hover .marquee {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  opacity: 1;
+}
+
+.btn-23:hover .text {
+  opacity: 0;
+}
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+  to {
+    transform: translateX(var(--end));
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.gridLayout {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.contOfGame {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  /* background-color: rgb(235, 255, 119); */
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 0.5fr;
+}
+.scroeBox {
+  background-color: rgba(0, 0, 0, 0.085);
+  width: 30rem;
+  height: 60%;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  border-radius: 0.6rem;
+  gap: 1rem;
+}
+.isXBox,
+.isYBox {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0.6rem;
+  flex-direction: column;
+  font-size: 2rem;
+}
+.middelBox {
+  flex-direction: column;
+  font-size: 1.3rem;
+}
+.gameBoxCont {
+  width: 100%;
+  height: 100%;
+  /* background-color: #8052ec; */
+}
+.gameWrap {
+  width: 28rem;
+  height: 90%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  /* background-color: #8052ec; */
+  gap: 0.6rem;
+}
+.game-box-btn {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(195, 195, 195, 0.889);
+  background-color: rgba(0, 0, 0, 0.41);
+  border-radius: 5px;
+  font-size: 5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.btnOfReset {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
 }
 .reset-bnt {
-background-color: white;
-color: black;
-border-radius: 10em;
-font-size: 17px;
-font-weight: 600;
-padding: 1em 2em;
-cursor: pointer;
-transition: all 0.4s ease-in-out;
-border: 1px solid black;
-box-shadow: 0 0 0 0 black;
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
 }
 
 .reset-bnt:hover {
-transform: translateY(-4px) translateX(-2px);
-box-shadow: 2px 5px 0 0 rgb(255, 255, 255);
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 rgb(255, 255, 255);
 }
 
 .reset-bnt:active {
-transform: translateY(2px) translateX(1px);
-box-shadow: 0 0 0 0 rgb(255, 255, 255);
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 rgb(255, 255, 255);
 }
 
-@media screen and (max-width:500px) {
-  .sidebar{
+@media screen and (max-width: 500px) {
+  .sidebar {
     display: none;
   }
 }
