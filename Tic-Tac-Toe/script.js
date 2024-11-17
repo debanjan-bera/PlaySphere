@@ -5,7 +5,7 @@ const btnGameBox = document.querySelectorAll(".game-box-btn"),
   palyerScoreBox = document.querySelectorAll(".playerBox"),
   conituneMatch = document.querySelector(".continueBtn"),
   popUpMassage = document.querySelector(".popUpMss"),
-  winnerMassage = document.querySelector(".isWinMas"),
+  winnerMassage = document.querySelector(".card__description"),
   roundScore = document.querySelector(".roundValue"),
   winningPatterns = [
     [0, 1, 2],
@@ -90,6 +90,7 @@ const resetGame = () => {
   count = xScoreCount = oScoreCount = roundCount = 0;
   isXScore.innerHTML = 0;
   isYScore.innerHTML = 0;
+  roundScore.innerHTML = 1
 };
 
 playGame();
