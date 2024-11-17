@@ -31,7 +31,7 @@ const playGame = () => {
       }});
   });
   conituneMatch.addEventListener("click", (ele) => {
-    conituneMatchFun();
+    conitnueMatchFun();
   });
   resetBtn.addEventListener("click", (ele) => {
     resetGame();
@@ -64,7 +64,7 @@ const winChecker = () => {
   return false;
 };
 
-const conituneMatchFun = () => {
+const conitnueMatchFun = () => {
   popUpMassage.classList.toggle("hide");
   btnGameBox.forEach((ele) => {
     ele.innerText = "";
@@ -73,27 +73,23 @@ const conituneMatchFun = () => {
   count = 0;
 };
 
+const isWinner = (winner, winCheck) => {
+  winnerMassage.innerHTML = winCheck ? `<h3>${winner} is winner</h3>`: `<h3>Match is ${winner}</h3>`;
+  console.log(winner);
+  isXScore.innerHTML = winner === "X" ? ++xScoreCount : xScoreCount;
+  isYScore.innerHTML = winner === "O" ? ++oScoreCount : oScoreCount;
+  roundScore.textContent = ++roundCount;
+  console.log(`x is ${xScoreCount} and O is ${oScoreCount} ${roundCount}`);
+};
 const resetGame = () => {
   console.log('Match reset');
   btnGameBox.forEach((ele) => {
     ele.innerText = "";
   });
   win = false;
-  count = 0;
-};
-
-const isWinner = (winner, winCheck) => {
-  winnerMassage.innerHTML = winCheck
-    ? `<h3>${winner} is winner</h3>`
-    : `<h3>Match is ${winner}</h3>`;
-
-  if (winCheck) {
-    isXScore.innerHTML = winner === "X" ? ++xScoreCount : ++oScoreCount;
-    isYScore.innerHTML = oScoreCount;
-  }
-  roundScore.textContent = ++roundCount;
-
-  console.log(`x is ${xScoreCount} and O is ${oScoreCount} ${roundCount}`);
+  count = xScoreCount = oScoreCount = roundCount = 0;
+  isXScore.innerHTML = 0;
+  isYScore.innerHTML = 0;
 };
 
 playGame();
