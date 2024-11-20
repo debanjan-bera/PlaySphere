@@ -5,7 +5,7 @@ const btnGameBox = document.querySelectorAll(".game-box-btn"),
   palyerScoreBox = document.querySelectorAll(".playerBox"),
   conituneMatch = document.querySelector(".continueBtn"),
   popUpMassage = document.querySelector(".popUpMss"),
-  winnerMassage = document.querySelector(".card__description"),
+  winnerMassage = document.querySelector(".card__title"),
   roundScore = document.querySelector(".roundValue"),
   winningPatterns = [
     [0, 1, 2],
@@ -86,7 +86,7 @@ const resetGame = () => {
   btnGameBox.forEach((ele) => {
     ele.innerText = "";
   });
-  win = false;
+  win = xTurn = false;
   count = xScoreCount = oScoreCount = roundCount = 0;
   isXScore.innerHTML = 0;
   isYScore.innerHTML = 0;
@@ -94,3 +94,12 @@ const resetGame = () => {
 };
 
 playGame();
+
+const width = ()=>{
+  let widthMode = document.querySelector('.isXBox').offsetWidth;
+  console.log(widthMode);
+  let setwidth = document.querySelector('.playerActive')
+  setwidth.style.width = widthMode+10+'px';
+  console.log(setwidth.offsetWidth);
+}
+width()
