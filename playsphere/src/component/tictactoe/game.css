@@ -1,0 +1,10 @@
+.contBox{
+    height: 96%;
+    width: 26rem;
+}
+@media screen and (max-width:400px){
+    .contBox{
+        height: 90%;
+        width: 20rem;
+    }
+}
