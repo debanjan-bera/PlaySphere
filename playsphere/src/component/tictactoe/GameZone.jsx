@@ -1,4 +1,4 @@
-/*eslint-disable*/
+// /*eslint-disable*/
 import { useState } from "react";
 import BoxComponent from "./box.jsx";
 import './game.css'
@@ -6,12 +6,7 @@ import './game.css'
 const MainGameFun = () => {
 
   const [boxFill, SetBoxFil] = useState(Array(9).fill("")); // Array to track box states
-  // const handleBoxClick = (index) => {
-  //   console.log(`Box ${index} clicked!`);
-  //   const newBoxFill = [...boxFill];
-  //   newBoxFill[index] = newBoxFill[index] === "X" ? "O" : "X"; // Toggle between "X" and "O"
-  //   setBoxFill(newBoxFill);
-  // };
+
 
 
   return (
