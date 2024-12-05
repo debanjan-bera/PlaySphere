@@ -7,7 +7,7 @@ const TictactoeGame = () => {
         <div className="flex items-center justify-center">
         <MainGameFun/>
         </div>
-        <div className="btn bg-green-500 ">Reset</div>
+        <div className="btn bg-green-500 ">{1+2+3}</div>
       </main>
     </>
   );
