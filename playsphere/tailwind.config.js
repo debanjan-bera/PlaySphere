@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       gridTemplateRows: {
-        'custom': '0.8fr 1.7fr 0.5fr', // Add your custom row template here
+        'custom': '0.9fr 1.4fr 0.5fr', // Add your custom row template here
       },
     },
     screens: {
