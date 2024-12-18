@@ -2,7 +2,7 @@
 // import BoxComponent from "./box.jsx";
 import "./game.css";
 
-import BoxComponent from './box';
+import BoxComponent from '../normal/box';
 
 const MainGameFun = () => {
   let i = 'X'
