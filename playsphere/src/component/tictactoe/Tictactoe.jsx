@@ -1,4 +1,4 @@
-import MainGameFun from "./GameZone";
+import { MainGameFun } from "./GameZone"
 const TictactoeGame = () => {
   return (
     <>

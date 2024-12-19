@@ -1,4 +1,3 @@
-// // /*eslint-disable*/
 import { useState } from "react";
 import "./game.css";
 export const MainGameFun = () => {
@@ -31,3 +30,4 @@ export const MainGameFun = () => {
   );
 };
 
+// export default MainGameFun;
