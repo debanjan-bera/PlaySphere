@@ -1,4 +1,4 @@
-const winningPatterns = [
+export const winningPatterns = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -20,7 +20,10 @@ export const winChecker = (gameArr,setGameArr) => {
     }
     return null
 };
-
+export const checkSize = (num)=>{
+  const totalGameBox = Math.sqrt(num);
+  return `grid-cols-${totalGameBox} grid-rows-${totalGameBox}`
+}
 const disableMatch = (gameArr,setGameArr) => {
   const updatedGameArr = gameArr.map((element) => ({
     ...element, 
@@ -28,3 +31,9 @@ const disableMatch = (gameArr,setGameArr) => {
   }));
   setGameArr(updatedGameArr)
 };
+export const handleGameReset = (setGameArr,setResult,setValue)=>{
+    setGameArr(Array(9).fill({ value: "", color: "", disabled: false }))
+    setResult('')
+    setValue(false);
+    // console.clear();
+  }
