@@ -20,10 +20,7 @@ export const winChecker = (gameArr,setGameArr) => {
     }
     return null
 };
-export const checkSize = (num)=>{
-  const totalGameBox = Math.sqrt(num);
-  return `grid-cols-${totalGameBox} grid-rows-${totalGameBox}`
-}
+
 const disableMatch = (gameArr,setGameArr) => {
   const updatedGameArr = gameArr.map((element) => ({
     ...element, 
@@ -31,9 +28,12 @@ const disableMatch = (gameArr,setGameArr) => {
   }));
   setGameArr(updatedGameArr)
 };
-export const handleGameReset = (setGameArr,setResult,setValue)=>{
-    setGameArr(Array(9).fill({ value: "", color: "", disabled: false }))
-    setResult('')
-    setValue(false);
-    // console.clear();
-  }
+export const checkSize = (num)=>{
+  const totalGameBox = Math.sqrt(num);
+  return `grid-cols-${totalGameBox} grid-rows-${totalGameBox}`
+}
+// export const handleGameReset = (setGameArr,setResult,setValue)=>{
+//     setGameArr(Array(9).fill({ value: "", color: "", disabled: false }))
+//     setResult('')
+//     setValue(false);
+//   }
