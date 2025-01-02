@@ -12,14 +12,17 @@ export const TicTacToeGameEngine = ({gameState, gameFunction, isPlayerTurn, setI
     newGameArr[index] = { value: newValue, color: newColor, disabled: true };
     gameFunction(newGameArr);
     setIsPlayerTurn(!isPlayerTurn);
-    const findingFill = newGameArr.filter((match)=> match.value !== '')
-    if(findingFill.length > 4){
+    const findingFill = newGameArr.filter((match)=> match.value !== '').length
+    if(findingFill > 4){
       const winnerMatch = winChecker(newGameArr,gameFunction)
       if(winnerMatch){
         checkResult(()=>winnerMatch)
         setPopUp(true)
       } 
-      else if(findingFill.length === 9 && !winnerMatch) checkResult(()=>'draw')
+      else if(findingFill === 9 && !winnerMatch){
+        checkResult(()=>'draw')
+        setPopUp(true)
+      } 
     }    
   };
   // console.log(checkSize(9));

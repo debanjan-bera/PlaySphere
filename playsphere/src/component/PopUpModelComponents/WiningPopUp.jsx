@@ -11,7 +11,7 @@ export const PopUpModel = ({isWinner,setPopUp,onHandleMatchContinue})=>{
 
     return (
       <>
-        <section className="absolute top-0 left-0 h-full w-full flex items-center justify-center bg-white">
+        <section className="absolute top-0 left-0 h-full w-full flex items-center justify-center bg-white/50">
           <div className="winning-card flex items-center justify-center flex-col bg-gradient-to-br scale-150 from-pink-500 to-yellow-400 text-white p-6 rounded-lg shadow-lg w-80 mx-auto animate-fadeIn">
             <h1 className="text-2xl font-bold mb-2">🎉 Congratulations! 🎉</h1>
             <p className="text-lg mb-4">{showWinner()}</p>
